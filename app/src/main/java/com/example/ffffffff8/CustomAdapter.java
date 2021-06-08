@@ -16,10 +16,10 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder>{
 
-    private ArrayList<Room> arrayList;
+    private ArrayList<RoomAccount> arrayList;
     private Context context; //adapter에서 액티비티에서 뭥ㄴ갈 가져올때 필요
 
-    public CustomAdapter(ArrayList<Room> arrayList, Context context) {
+    public CustomAdapter(ArrayList<RoomAccount> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -39,9 +39,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         Glide.with(holder.itemView)
                 .load(arrayList.get(position).getProfile())
                 .into(holder.iv_profile);
-        holder.tv_roomN.setText(arrayList.get(position).getRoomN());
-        holder.tv_place.setText(arrayList.get(position).getPlace());
-        holder.tv_recruitmentN.setText(String.valueOf(arrayList.get(position).getRecruitmentN()));
+        holder.tv_roomName.setText(arrayList.get(position).getRoomName());
+        holder.tv_placeActivity.setText(arrayList.get(position).getPlaceActivity());
+        holder.tv_entryNumber.setText(String.valueOf(arrayList.get(position).getEntryNumber()));
     }
 
     @Override
@@ -52,16 +52,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
         ImageView iv_profile;
-        TextView tv_roomN;
-        TextView tv_place;
-        TextView tv_recruitmentN;
+        TextView tv_roomName;
+        TextView tv_placeActivity;
+        TextView tv_entryNumber;
 
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
             this.iv_profile = itemView.findViewById(R.id.iv_profile);
-            this.tv_roomN = itemView.findViewById(R.id.tv_roomN);
-            this.tv_place = itemView.findViewById(R.id.tv_place);
-            this.tv_recruitmentN = itemView.findViewById(R.id.tv_recruitmentN);
+            this.tv_roomName = itemView.findViewById(R.id.tv_roomName);
+            this.tv_placeActivity = itemView.findViewById(R.id.tv_placeActivity);
+            this.tv_entryNumber = itemView.findViewById(R.id.tv_entryNumber);
 
         }
     }

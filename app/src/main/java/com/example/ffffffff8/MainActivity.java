@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    private ArrayList<Room> arrayList;
+    private ArrayList<RoomAccount> arrayList;
     private FirebaseDatabase database;
     private DatabaseReference databaseReference;
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 //파이어베이스 데이터베이스의 데이터를 받아오는 곳
                 arrayList.clear(); //기존 배열리스트가 존재하지 않게 초기화. 에러방지차원
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) { //반목문으로 데이터 List를 추출해냄
-                    Room room = snapshot.getValue(Room.class); //만들어뒀던 Room 객체에 데이터를 담는다.
+                    RoomAccount room = snapshot.getValue(RoomAccount.class); //만들어뒀던 Room 객체에 데이터를 담는다.
                     arrayList.add(room); //담은 데이터들을 배열리스트에 넣고 리사이클러뷰로 보낼 준비
                 }
                 adapter.notifyDataSetChanged(); //리스트 저장 및 새로고침

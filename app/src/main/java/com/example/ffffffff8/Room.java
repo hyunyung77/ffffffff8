@@ -7,7 +7,7 @@ public class Room {
     private String roomName;
 
     private String profile;
-    private String roomN;
+    //private String roomN;
     private String place;
     private int recruitmentN;
 
@@ -46,16 +46,6 @@ public class Room {
     }
 
     //----------------------
-
-
-
-    public String getRoomN() {
-        return roomN;
-    }
-
-    public void setRoomN(String roomN) {
-        this.roomN = roomN;
-    }
 
     public String getPlace() {
         return place;
